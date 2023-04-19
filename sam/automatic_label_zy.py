@@ -372,19 +372,19 @@ if __name__ == "__main__":
         )
         
         # draw output image
-        plt.figure(figsize=(10, 10))
-        plt.imshow(image)
-        for mask in masks:
-            show_mask(mask.cpu().numpy(), plt.gca(), random_color=True)
-        for box, label in zip(boxes_filt, pred_phrases):
-            show_box(box.numpy(), plt.gca(), label)
+        # plt.figure(figsize=(10, 10))
+        # plt.imshow(image)
+        # for mask in masks:
+        #     show_mask(mask.cpu().numpy(), plt.gca(), random_color=True)
+        # for box, label in zip(boxes_filt, pred_phrases):
+        #     show_box(box.numpy(), plt.gca(), label)
 
-        plt.title(caption)
-        plt.axis('off')
-        plt.savefig(
-            os.path.join(output_dir, "visual", f"auto-{caption}.jpg"), 
-            bbox_inches="tight", dpi=300, pad_inches=0.0
-        )
+        # plt.title(caption)
+        # plt.axis('off')
+        # plt.savefig(
+        #     os.path.join(output_dir, "visual", f"auto-{caption}.jpg"), 
+        #     bbox_inches="tight", dpi=300, pad_inches=0.0
+        # )
         # only consider the first object
         save_mask_data(output_dir, caption, masks, boxes_filt, pred_phrases)
         # (crop_images, object_names) <-> (box_filt, pred_phrases)
@@ -438,9 +438,9 @@ if __name__ == "__main__":
             image.save(inpaint_img_pth)
             info['image_wo_object'].append(inpaint_img_pth)
             info['image_wo_object_prompt'].append(remove_caption)
-            whole_image = image_Splicing_2(ori_image,image)
-            whole_image.save(f"/share/sd/sam/Grounded-Segment-Anything-main/outputs/debug/debug_ori_inpaint_{img_id}.jpg")
-            w,h = image_pil.size
+            # whole_image = image_Splicing_2(ori_image,image)
+            # whole_image.save(f"/share/sd/sam/Grounded-Segment-Anything-main/outputs/debug/debug_ori_inpaint_{img_id}.jpg")
+            # w,h = image_pil.size
             # draw.text((w/2,h/2),f"{caption}",fontsize=256)
             # draw.text((w+w/2,h/2),f"{remove_caption}",fontsize=256)
             time.sleep(20)
