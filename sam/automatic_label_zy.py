@@ -423,15 +423,15 @@ if __name__ == "__main__":
             
             image_pil = Image.fromarray(image)
             ori_image = image_pil
-            image_pil = image_pil.resize((512, 512))
-            mask_pil = mask_pil.resize((512, 512))
+            # image_pil = image_pil.resize((512, 512))
+            # mask_pil = mask_pil.resize((512, 512))
             # prompt = "A sofa, high quality, detailed"
             # inpaint_prompt = "None"
             # inpaint_prompt = "none"
             inpaint_prompt = "no text, empty text, text removal, pure background"
 
             image = pipe(prompt=inpaint_prompt, image=image_pil, mask_image=mask_pil).images[0]
-            image = image.resize(size)
+            # image = image.resize(size)
             remove_caption = generate_caption(image, device=device)
             print(f"After remove objects, the caption is:{remove_caption}")
             inpaint_img_pth = os.path.join(output_dir, "inpaint", f"inpaint-{img_id}.jpg")
