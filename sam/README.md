@@ -24,4 +24,8 @@ Please follow the original repo of Grounded-SAM to manage your environemnt for t
 bash test_sam_label.sh
 ```
 
+add customization for coco dataset
+```
+bash test_sam_label_coco.sh
+```
 remember to fill in the VIP-OpenAI API ID to speedup the process
