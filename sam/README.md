@@ -27,5 +27,12 @@ bash test_sam_label.sh
 add customization for coco dataset
 ```
 bash test_sam_label_coco.sh
+# you should change the following codes
+# 1. local coco data path
+# 2. local save path
+# 3. OPENAI API key
 ```
+
+
+
 remember to fill in the VIP-OpenAI API ID to speedup the process
